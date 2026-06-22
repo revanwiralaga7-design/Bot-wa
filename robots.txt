@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://your-github-username.github.io/modmaster/sitemap.xml
+
+# Disallow admin access from search engines
+Disallow: /admin.html
+Disallow: /admin.js
+Disallow: /admin.css

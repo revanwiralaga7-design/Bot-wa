@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JusticeMods - Download Premium Mod APKs | Free Android Apps</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Download premium mod APKs for free. Get unlimited access to educational apps, games, and productivity tools with JusticeMods - your trusted source for Android mods.">
+    <meta name="keywords" content="mod apk, android mods, free apps, premium apps, educational apps, games, apk download">
+    <meta name="author" content="Ishant Webworks">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="JusticeMods - Download Premium Mod APKs">
+    <meta property="og:description" content="Your trusted source for premium mod APKs. Download educational apps, games, and productivity tools for free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-github-username.github.io/modmaster">
+    <meta property="og:image" content="https://your-github-username.github.io/modmaster/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JusticeMods- Download Premium Mod APKs">
+    <meta name="twitter:description" content="Your trusted source for premium mod APKs. Download educational apps, games, and productivity tools for free.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzAwRDRGRiIvPgo8cGF0aCBkPSJNOCAxMkgxNlYyMEg4VjEyWiIgZmlsbD0id2hpdGUiLz4KPHA+">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "JusticeMods",
+        "description": "Download premium mod APKs for free",
+        "url": "https://your-github-username.github.io/modmaster",
+        "author": {
+            "@type": "Organization",
+            "name": "Justice Webworks",
+            "url": "https://ishant.shop"
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Popup -->
+    <div id="videoPopup" class="video-popup">
+        <div class="video-popup-content">
+            <span class="close-btn" onclick="closeVideoPopup()">&times;</span>
+            <h3>How to Download Apps</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="How to Download Apps" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="cyber-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1 class="cyber-text">Justice<span class="highlight">Mods</span></h1>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <!-- Navigation will be populated by JavaScript -->
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Welcome to the <span class="cyber-text">Future</span>
+                <br>of <span class="highlight">Mod APKs</span>
+            </h1>
+            <p class="hero-description">
+                Unlock premium features, access unlimited content, and enhance your Android experience 
+                with our carefully curated collection of mod APKs.
+            </p>
+            <div class="hero-buttons">
+                <button class="cyber-btn primary" onclick="scrollToApps()">
+                    Explore Apps
+                </button>
+                <button class="cyber-btn secondary" onclick="showVideoPopup()">
+                    How to Download
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-elements">
+                <div class="float-element" style="--delay: 0s;"></div>
+                <div class="float-element" style="--delay: 1s;"></div>
+                <div class="float-element" style="--delay: 2s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for apps, games, and more..." class="cyber-search">
+                <button class="search-btn" onclick="performSearch()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <h2 class="section-title">Categories</h2>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section class="apps-section" id="apps">
+        <div class="container">
+            <h2 class="section-title">Featured Apps</h2>
+            <div class="apps-grid" id="appsGrid">
+                <!-- Apps will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Section -->
+    <section class="request-section">
+        <div class="container">
+            <div class="request-card">
+                <h2 class="section-title">Request an App</h2>
+                <p>Can't find what you're looking for? Request it and we'll add it to our collection!</p>
+                <form id="requestForm" action="https://formsubmit.co/ishant150407@gmail.com" method="POST" class="request-form">
+                    <input type="hidden" name="_subject" value="New App Request - JusticeMods">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="thanks.html">
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required class="cyber-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required class="cyber-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="app_name" placeholder="App Name" required class="cyber-input">
+                    </div>
+                    <div class="form-group">
+                        <select name="category" required class="cyber-input">
+                            <option value="">Select Category</option>
+                            <option value="Education">Education</option>
+                            <option value="Games">Games</option>
+                            <option value="Productivity">Productivity</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" placeholder="App Description or Special Requirements" rows="4" class="cyber-input"></textarea>
+                    </div>
+                    <button type="submit" class="cyber-btn primary">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="cyber-text">Justice<span class="highlight">Mods</span></h3>
+                    <p>Your trusted source for premium mod APKs and Android applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#apps">Apps</a></li>
+                        <li><a href="https://blogs.ishant.shop" target="_blank">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:ishant150407@gmail.com">ishant150407@gmail.com</a></li>
+                        <li><a href="https://ishant.shop" target="_blank">ishant.shop</a></li>
+                        <li><a href="https://blogs.ishant.shop" target="_blank">blogs.ishant.shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JusticeMods. Created by <a href="https://ishant.shop" target="_blank">JusticeMods Webworks</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

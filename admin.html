@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODMASTER Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <nav class="admin-sidebar">
+            <div class="admin-logo">
+                <h2 class="cyber-text">MOD<span class="highlight">MASTER</span></h2>
+                <p>Admin Panel</p>
+            </div>
+            <ul class="admin-nav">
+                <li><a href="#dashboard" class="nav-link active" onclick="showSection('dashboard')">📊 Dashboard</a></li>
+                <li><a href="#apps" class="nav-link" onclick="showSection('apps')">📱 Manage Apps</a></li>
+                <li><a href="#categories" class="nav-link" onclick="showSection('categories')">📂 Categories</a></li>
+                <li><a href="#navigation" class="nav-link" onclick="showSection('navigation')">🧭 Navigation</a></li>
+                <li><a href="#settings" class="nav-link" onclick="showSection('settings')">⚙️ Settings</a></li>
+                <li><a href="#export" class="nav-link" onclick="showSection('export')">💾 Export Data</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1 id="sectionTitle">Dashboard</h1>
+                <div class="admin-actions">
+                    <button class="cyber-btn secondary" onclick="previewWebsite()">Preview Website</button>
+                    <button class="cyber-btn primary" onclick="exportData()">Export & Update</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Apps</h3>
+                        <p class="stat-number" id="totalApps">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Categories</h3>
+                        <p class="stat-number" id="totalCategories">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Downloads</h3>
+                        <p class="stat-number">500K+</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Users</h3>
+                        <p class="stat-number">25K+</p>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="activityList">
+                        <!-- Activity items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Apps Management Section -->
+            <section id="apps" class="admin-section">
+                <div class="section-header">
+                    <h2>Manage Apps</h2>
+                    <button class="cyber-btn primary" onclick="showAddAppModal()">Add New App</button>
+                </div>
+
+                <div class="apps-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Version</th>
+                                <th>Downloads</th>
+                                <th>Rating</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appsTableBody">
+                            <!-- Apps will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Categories Management Section -->
+            <section id="categories" class="admin-section">
+                <div class="section-header">
+                    <h2>Manage Categories</h2>
+                    <button class="cyber-btn primary" onclick="showAddCategoryModal()">Add New Category</button>
+                </div>
+
+                <div class="categories-grid" id="categoriesGrid">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Navigation Management Section -->
+            <section id="navigation" class="admin-section">
+                <div class="section-header">
+                    <h2>Manage Navigation</h2>
+                    <button class="cyber-btn primary" onclick="addNavItem()">Add Menu Item</button>
+                </div>
+
+                <div class="nav-manager" id="navManager">
+                    <!-- Navigation items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="admin-section">
+                <div class="section-header">
+                    <h2>Website Settings</h2>
+                </div>
+
+                <form id="settingsForm" class="settings-form">
+                    <div class="settings-group">
+                        <h3>General Settings</h3>
+                        <div class="form-group">
+                            <label for="siteName">Site Name</label>
+                            <input type="text" id="siteName" name="siteName" class="cyber-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="tagline">Tagline</label>
+                            <input type="text" id="tagline" name="tagline" class="cyber-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="metaDescription">Meta Description</label>
+                            <textarea id="metaDescription" name="metaDescription" rows="3" class="cyber-input"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label for="contactEmail">Contact Email</label>
+                            <input type="email" id="contactEmail" name="contactEmail" class="cyber-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="officialWebsite">Official Website</label>
+                            <input type="url" id="officialWebsite" name="officialWebsite" class="cyber-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="blogWebsite">Blog Website</label>
+                            <input type="url" id="blogWebsite" name="blogWebsite" class="cyber-input">
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>Video Settings</h3>
+                        <div class="form-group">
+                            <label for="videoUrl">How-to Video URL</label>
+                            <input type="url" id="videoUrl" name="videoUrl" class="cyber-input">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="cyber-btn primary">Save Settings</button>
+                </form>
+            </section>
+
+            <!-- Export Data Section -->
+            <section id="export" class="admin-section">
+                <div class="section-header">
+                    <h2>Export & Update Website</h2>
+                </div>
+
+                <div class="export-container">
+                    <div class="export-info">
+                        <h3>How it works:</h3>
+                        <ol>
+                            <li>Click "Generate JSON" to create the updated data file</li>
+                            <li>Copy the generated JSON content</li>
+                            <li>Replace the content of your website's <code>data.json</code> file</li>
+                            <li>Upload the updated file to your GitHub repository</li>
+                            <li>Your website will automatically update with the new content</li>
+                        </ol>
+                    </div>
+
+                    <div class="export-actions">
+                        <button class="cyber-btn primary" onclick="generateJSON()">Generate JSON</button>
+                        <button class="cyber-btn secondary" onclick="downloadJSON()">Download JSON File</button>
+                        <button class="cyber-btn secondary" onclick="copyJSONToClipboard()">Copy to Clipboard</button>
+                    </div>
+
+                    <div class="json-output">
+                        <h4>Generated JSON:</h4>
+                        <textarea id="jsonOutput" readonly class="json-textarea"></textarea>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- App Modal -->
+    <div id="appModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('appModal')">&times;</span>
+            <h2 id="appModalTitle">Add New App</h2>
+            <form id="appForm" class="modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appName">App Name *</label>
+                        <input type="text" id="appName" name="appName" required class="cyber-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="appCategory">Category *</label>
+                        <select id="appCategory" name="appCategory" required class="cyber-input">
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="appDescription">Description *</label>
+                    <textarea id="appDescription" name="appDescription" rows="3" required class="cyber-input"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appImage">Image URL (Google Drive) *</label>
+                        <input type="url" id="appImage" name="appImage" required class="cyber-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="appDownloadUrl">Download URL (Google Drive) *</label>
+                        <input type="url" id="appDownloadUrl" name="appDownloadUrl" required class="cyber-input">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appVersion">Version *</label>
+                        <input type="text" id="appVersion" name="appVersion" required class="cyber-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="appSize">Size *</label>
+                        <input type="text" id="appSize" name="appSize" required class="cyber-input">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appRating">Rating (1-5) *</label>
+                        <input type="number" id="appRating" name="appRating" min="1" max="5" step="0.1" required class="cyber-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="appDownloads">Downloads *</label>
+                        <input type="text" id="appDownloads" name="appDownloads" required class="cyber-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="appFeatures">Features (comma-separated)</label>
+                    <input type="text" id="appFeatures" name="appFeatures" class="cyber-input" placeholder="Feature 1, Feature 2, Feature 3">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="cyber-btn secondary" onclick="closeModal('appModal')">Cancel</button>
+                    <button type="submit" class="cyber-btn primary">Save App</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Category Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('categoryModal')">&times;</span>
+            <h2 id="categoryModalTitle">Add New Category</h2>
+            <form id="categoryForm" class="modal-form">
+                <div class="form-group">
+                    <label for="categoryName">Category Name *</label>
+                    <input type="text" id="categoryName" name="categoryName" required class="cyber-input">
+                </div>
+                <div class="form-group">
+                    <label for="categoryIcon">Icon (Emoji) *</label>
+                    <input type="text" id="categoryIcon" name="categoryIcon" required class="cyber-input" placeholder="📱">
+                </div>
+                <div class="form-group">
+                    <label for="categoryDescription">Description *</label>
+                    <textarea id="categoryDescription" name="categoryDescription" rows="2" required class="cyber-input"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="cyber-btn secondary" onclick="closeModal('categoryModal')">Cancel</button>
+                    <button type="submit" class="cyber-btn primary">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
